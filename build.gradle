@@ -2,6 +2,7 @@ plugins {
 	id 'java'
 	id 'org.springframework.boot' version '3.1.0'
 	id 'io.spring.dependency-management' version '1.1.0'
+	id "org.sonarqube" version "4.0.0.2929"
 }
 
 group = 'example'
@@ -15,6 +16,8 @@ repositories {
 dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-web'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+
+	implementation 'org.springframework.boot:spring-boot-starter-security'
 
 	implementation 'org.springframework.data:spring-data-jdbc'
 	testImplementation 'com.h2database:h2'
@@ -34,6 +37,6 @@ test {
 		showStackTraces true
 
 		// Change to `true` for more verbose test output
-		showStandardStreams = false
+		showStandardStreams = true
 	}
 }
